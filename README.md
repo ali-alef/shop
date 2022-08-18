@@ -1,2 +1,2 @@
-# shop-
+# shop
 shop django project
