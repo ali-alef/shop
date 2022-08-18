@@ -1,0 +1,18 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+    <h3>Product</h3>
+    <br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br><br>
+        {% if subject == 'Update' %}
+            <button class="btn btn-outline-info mb-4" type="submit">Update</button>
+        {% elif subject == 'Create' %}
+            <button class="btn btn-outline-info mb-4" type="submit">Create</button>
+        {% endif %}
+    </form>
+        <a class="btn btn-outline-danger" href="{% url 'store' %}">Cancel</a>
+
+{% endblock content %}

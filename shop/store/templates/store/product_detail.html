@@ -1,0 +1,19 @@
+{% extends "store/base.html" %}
+{% block content %}
+  <div class="row">
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{ object.image.url }}">
+        <div class="box-element product">
+        <h6><strong>{{ object.title }}</strong></h6>
+        <hr>
+        <a data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</a>
+        {% for group in user.groups.all %}
+            {% if group.name == 'admin' %}
+                <a class="btn btn-primary" href="{% url 'update-product' object.id %}">Update</a>
+            {% endif %}
+        {% endfor %}
+        <h4 style="display: inline-block; float: right"><strong>${{ object.price|floatformat:2 }}</strong></h4>
+      </div>
+    </div>
+  </div>
+{% endblock %}
