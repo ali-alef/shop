@@ -30,7 +30,7 @@ this project is a shop writen in python
     * loginView: this view is for login and if user logs in it will merge the items that were selected before login and the items were selected in the account by calling mergeItems func
     * LogoutViewCustom: this view is for logout
     
-# not
+# note
 if your user is in admin group you can create or update products in the home page or detailView
     
 ## superuser info
